@@ -2,6 +2,15 @@
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9501326-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-9501326-2');
+    </script>
     <link rel="shortcut icon" type="image/png" href="/img/favicon.jpg"/>
     <link rel="stylesheet" type="text/css" href="css/dc.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.min.css">
@@ -151,8 +160,8 @@
 </div>
 
 <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-material-design.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-material-design.min.js"></script>
 <script type="text/javascript" src="js/custom-scrollbar.min.js"></script>
 <script type="text/javascript" src="js/d3.js"></script>
 <script type="text/javascript" src="js/crossfilter.js"></script>
@@ -160,24 +169,18 @@
 <script type="text/javascript" src="js/guitars.js"></script>
 <script>
     function pageLoad() {
-        $(document).ready(function() { 
-            $('body').bootstrapMaterialDesign(); 
-        });
 
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("content").style.display = "block";
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-                });
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('inactive');
-                $('.container').toggleClass('sidebar');
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
             });
-    }
 
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('inactive');
+            $('.container').toggleClass('sidebar');
+        });
+    }
 </script>
 </body>
-
-
 </html>
