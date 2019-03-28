@@ -1,4 +1,4 @@
-/* background image and attribution */
+/* Background image and attribution */
 html, body { 
     margin: 0; 
     padding: 0; 
@@ -31,12 +31,12 @@ html, body {
 
   }
 
-/* loading */
+/* Loading */
 #content {
     display: none;
 }
 
-/* loading spinner */
+/* Loading spinner */
 #loader {
     position: absolute;
     left: 50%;
@@ -69,7 +69,7 @@ html, body {
     100% { transform: rotate(360deg); }
 }
 
-/* animate load content from bottom */
+/* Animate load content from bottom */
 .animate-bottom {
     position: relative;
     -webkit-animation-name: animatebottom;
@@ -88,7 +88,7 @@ html, body {
     to{ bottom:0; opacity:1 }
 }
 
-/* results side bar */
+/* Results side bar */
 .wrapper {
     display: flex;
     width: 100%;
@@ -99,6 +99,7 @@ html, body {
     position: fixed;
     padding-top: 15px;
     padding-left: 12px;
+    padding-bottom: 120px;
     margin-top: 10px;
     left: 0;
     height: 100vh;
@@ -131,6 +132,7 @@ html, body {
     float: center;
 }
 
+/* Body contents */
 h2 {
     font-size: 3.3em;
     text-align: right;
@@ -141,10 +143,6 @@ div.dc-chart {
     padding-left: 1px;
     padding-bottom: 0px;
     padding-top: 0px;
-}
-
-button {
-    align-items: right;
 }
 
 .card-body {
@@ -170,9 +168,27 @@ button {
     font-size: 1.2em;
 }
 
+.dc-chart .axis path, .dc-chart .axis line {
+    stroke: black;
+}
+
+.dc-chart g.row text, .dc-chart text.pie-slice, .dc-chart .axis text {
+    fill: black;
+}
+
+/* Header */
+button {
+    align-items: right;
+}
+
+.btn {
+    margin-left: 5px;
+}
+
 .buttons {
     float: right;
     vertical-align: middle;
+    display: flex;
 }
 
 #count {
@@ -191,14 +207,6 @@ button {
 .page-header {
     font-size: 2.5em;
     color: white !important;
-}
-
-.dc-chart .axis path, .dc-chart .axis line {
-    stroke: black;
-}
-
-.dc-chart g.row text, .dc-chart text.pie-slice, .dc-chart .axis text {
-    fill: black;
 }
 
 .navbar {

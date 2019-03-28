@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="css/dc.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/custom-scrollbar.min.css">
 </head>
-<body onload="pageLoad()">
 <div id="background">
 <div id="loader"></div>  
 <div id="content" class="animate-bottom">
@@ -21,7 +19,11 @@
         </div>
         <div class="buttons col">
                 <button type="button" class="btn btn-raised btn-primary" id="sidebarCollapse">Results</button>
-                <button type="button" class="btn btn-raised btn-secondary" onclick=reset()>Reset</button>
+                <button type="button" class="btn btn-raised btn-info" onclick=reset()>Reset</button>
+                <form>  
+                    <input type="button" value="About" onclick="window.location.href='https://github.com/astronge/guitar-explorer/'"
+                    class="btn btn-raised btn-secondary"/>
+                </form>  
         </div>
     </div>
 </nav>
@@ -33,7 +35,7 @@
 
                 <thead>
                     <tr>
-                        <th class="dc-table-head">Manufacturer</th>
+                        <th class="dc-table-head">Brand</th>
                         <th class="dc-table-head">Model</th>
                         <th class="dc-table-head">Price</th>
                         <th class="dc-table-head"></th>
@@ -54,10 +56,10 @@
 <div class="container">
     <div class="row">            
         <div class="card text-center">
-            <div class="chart-header">Manufacturer</div>
+            <div class="chart-header">Brand</div>
             <div class="container-fluid">
                 <div>
-                    <div class="dc-chart" id="manufacturer-chart"></div>
+                    <div class="dc-chart" id="brand-chart"></div>
                 </div>
             </div>
         </div>
@@ -148,7 +150,6 @@
 <div >
 <a href="https://www.flickr.com/photos/designex/albums/72157649240888662" class="img-attrib">IMG_2835-1-4 by designex licensed under CC BY-NC 2.0</a>
 </div>
-
 <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-material-design.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
@@ -156,27 +157,25 @@
 <script type="text/javascript" src="js/d3.js"></script>
 <script type="text/javascript" src="js/crossfilter.js"></script>
 <script type="text/javascript" src="js/dc.js"></script>
-<script type="text/javascript" src="js/guitars.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
 <script>
-    function pageLoad() {
-        $(document).ready(function() { 
-            $('body').bootstrapMaterialDesign(); 
-        });
-
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("content").style.display = "block";
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-                });
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('inactive');
-                $('.container').toggleClass('sidebar');
-            });
-    }
-
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyANQKg3rYu4BvZliIRRb5R_6iv0VJrYKHs",
+        authDomain: "guitars-a9616.firebaseapp.com",
+        databaseURL: "https://guitars-a9616.firebaseio.com",
+        projectId: "guitars-a9616",
+        storageBucket: "guitars-a9616.appspot.com",
+        messagingSenderId: "827835700748"
+    };
+    firebase.initializeApp(config);
 </script>
+<script type="text/javascript" src="js/guitars.js"></script>
 </body>
-
-
 </html>
